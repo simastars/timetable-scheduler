@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <script src="jquery.js"></script>
+    </head>
+    <body>
+        <form>
+            <input type="text" name="username" id="username" placeholder="Username"><br><br>
+            <input type="password" name="password" id="password" placeholder="Password"><br><br>
+            <!-- <input type="submit" name="Login" value="Login" id="login"> -->
+            <button id="signin">Login</button>
+        </form>
+    </body>
+</html>
+
+<script>
+$(document).ready(function(){
+    $(document).on("click", "#signin", function(evt){
+        
+        evt.preventDefault();
+        var username = $("#username").val();
+        var password = $("#password").val();
+        $.ajax({
+            url:"login.php",
+            method:"POST",
+            type:"text",
+            data:{user: username, pass:password},
+            beforeSend:function(){
+                $("#login").html("Signin...")
+            },
+            success:function(data){
+                $("#signin").html("Signin");
+                alert(data);
+                
+            }
+        })
+    })
+})
+</script>

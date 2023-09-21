@@ -1,0 +1,12 @@
+p::first-letter{
+    font-size: larger;
+    font-weight: bolder;
+    color: blueviolet;
+}
+P{
+    font-size: 40px;
+}
+.table{
+    height: 500px;
+    min-height: 85%;
+}
